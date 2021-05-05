@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>2-4 Tree</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper blue">
+      <a href="#" class="brand-logo right"> 2-4 Tree</a>
+      <a href="about" class="right" style="padding-right: 150px;"> About</a>
+      <ul id="nav-mobile" class="lefr hide-on-med-and-down">
+        <li><a href="insert">Insert</a></li>
+        <li><a href="search">Search</a></li>
+        <li><a href="remove">Remove</a></li>
+        <li><a href="clear">Clear</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav>
+    <div class="nav-wrapper white">
+      <form action="array" method="POST" style="padding-left: 30px;padding-right: 30px;">
+        <div class="input-field">
+          <input name="elements" type="text" placeholder="Enter the Element(s) for the operation" required>
+          <label class="label-icon" for="search"><i class="material-icons"></i></label>
+        </div>
+      </form>
+    </div>
+  </nav>
+  {% if issearch %}
+  {% if found %}
+  <div class="alert" style="padding: 20px;background-color: green;color: white;">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    {{msg}}
+  </div>
+  {% else %}
+  <div class="alert" style="padding: 20px;background-color: #f44336;color: white;">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    {{msg}}
+  </div>
+  {% endif %}
+  {% endif %}
+  <div style="margin-left: auto;margin-right: auto;margin-top: auto;display: block;width: 50%;padding: 200px;">
+    {% if filename %}
+    <img class="responsive-img" src="{{ url_for('static', filename=filename ) }}" alt="Visualise Your Data here">
+    {% else %}
+    <h4>Visualise Your Data here</h4>
+    {% endif %}
+
+  </div>
+</body>
+
+</html>

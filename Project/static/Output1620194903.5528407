@@ -1,0 +1,8 @@
+digraph structs {
+	node [shape=record]
+	struct00None [label="<f0> 2"]
+	"struct10[2]" [label="<f0> 1"]
+	"struct11[2]" [label="<f0> 3|<f1> 4|<f2> 5"]
+	struct00None:f0 -> "struct10[2]":f0
+	struct00None:f0 -> "struct11[2]":f0
+}
